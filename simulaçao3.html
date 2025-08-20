@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Crédito</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f5f7fa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      width: 600px;
+      max-width: 100%;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .card img {
+      max-width: 150px;
+      margin: 0 auto 15px;
+      display: block;
+    }
+    h2 {
+      margin-bottom: 10px;
+      color: #0d47a1;
+      font-size: 22px;
+      text-align: center;
+    }
+    .taxa {
+      margin: 15px 0 25px;
+      padding: 12px;
+      background: #e8f0fe;
+      border-left: 6px solid #0d47a1;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #0d47a1;
+      font-size: 15px;
+      text-align: center;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 25px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+    input:focus {
+      border-color: #0d47a1;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(13,71,161,0.1);
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+    .btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: #0d47a1;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Logo da empresa -->
+    <img src="logo.png" alt="Logo da Empresa">
+
+    <h2>Simulador de Empréstimo</h2>
+
+    <!-- Informação fixa da taxa -->
+    <div class="taxa">Taxa de Juros: A partir de 1,50% / Máximo 1,85% ao mês</div>
+
+    <div class="form-grid">
+      <div>
+        <label for="banco">Banco Originário</label>
+        <input type="text" id="banco" placeholder="Ex.: Banco X">
+      </div>
+
+      <div>
+        <label for="compra">Valor da Compra da Dívida (R$)</label>
+        <input type="text" id="compra" placeholder="Ex.: 15.000,00">
+      </div>
+
+      <div>
+        <label for="liquido">Valor Líquido Liberado (R$)</label>
+        <input type="text" id="liquido" placeholder="Ex.: 10.000,00">
+      </div>
+
+      <div>
+        <label for="parcela">Valor da Parcela (R$)</label>
+        <input type="text" id="parcela" placeholder="Ex.: 950,00">
+      </div>
+
+      <div>
+        <label for="prazo">Prazo (meses)</label>
+        <input type="text" id="prazo" placeholder="Ex.: 12">
+      </div>
+
+      <div>
+        <label for="taxa">Taxa do Contrato (%)</label>
+        <input type="text" id="taxa" placeholder="Ex.: 1,85">
+      </div>
+    </div>
+
+    <button class="btn" onclick="window.print()">Imprimir / Salvar PDF</button>
+
+    <div class="footer">* Simulação meramente informativa, sem valor contratual.</div>
+  </div>
+</body>
+</html>
